@@ -1,66 +1,175 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 家族カルテ（pedigree-app）
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> 家族の病歴を、次の世代へ。
 
-## About Laravel
+家族・祖先の血縁関係と病歴を記録し、将来的には遺伝子情報も含めて一元管理することを目指したWebアプリケーションです。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravelを用いたポートフォリオとして開発していますが、単なる学習用CRUDではなく、実際に利用できるサービスを目標に設計・実装を進めています。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# 📖 プロジェクト紹介
 
-## Learning Laravel
+## 背景
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+病院で
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+「ご家族に○○の病気の方はいらっしゃいますか？」
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+と聞かれた際、祖父母や親族の病歴を正確に答えられないことがあります。
 
-## Laravel Sponsors
+家族の病歴は、自分だけでなく子どもや孫の健康にも関わる重要な情報ですが、
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- 家族の記憶
+- 紙のメモ
+- 口頭での引き継ぎ
 
-### Premium Partners
+に頼ることが多く、世代を超えて管理する仕組みはあまり整っていません。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+この課題を解決するため、
 
-## Contributing
+**血縁関係・病歴・将来的には遺伝子情報まで一元管理できるサービス**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+として本プロジェクトを企画しました。
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 開発目的
 
-## Security Vulnerabilities
+このプロジェクトでは
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- LaravelによるWebアプリケーション開発
+- データベース設計
+- Git / GitHubを用いた開発フロー
+- ドキュメント作成
+- 保守性を考慮した設計
 
-## License
+まで、一連の開発プロセスを経験することを目的としています。
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+# ✨ 現在の実装範囲（v1）
+
+- Laravel Fortifyによる認証
+- 人物管理（Person CRUD）
+- 病名マスタ管理
+- 病歴管理
+- 血縁情報（自己参照リレーション）
+
+---
+
+# 🚀 今後追加予定
+
+- 家系図表示
+- パートナー・再婚管理
+- 養子情報管理
+- 遺伝子検査情報
+- 家族共有
+- 権限管理
+- AIを活用した健康リスク表示
+
+---
+
+# 🛠 使用技術
+
+| 分類            | 技術                         |
+| --------------- | ---------------------------- |
+| Backend         | Laravel 10                   |
+| Authentication  | Laravel Fortify              |
+| Frontend        | Blade / Tailwind CSS         |
+| Database        | MySQL                        |
+| Development     | Laravel Sail / Docker / WSL2 |
+| Version Control | Git / GitHub                 |
+
+---
+
+# 🏗 システム構成
+
+```
+Browser
+      │
+      ▼
+Laravel (Blade)
+      │
+Laravel Fortify
+      │
+Eloquent ORM
+      │
+MySQL
+```
+
+---
+
+# 🚀 セットアップ
+
+## 必要環境
+
+- Docker Desktop
+- WSL2
+- Git
+
+## インストール
+
+```bash
+git clone https://github.com/shiho5shiho/pedigree-app.git
+
+cd pedigree-app
+
+cp .env.example .env
+
+./vendor/bin/sail up -d
+
+./vendor/bin/sail artisan migrate
+
+./vendor/bin/sail artisan key:generate
+```
+
+ブラウザで
+
+```
+http://localhost
+```
+
+へアクセスしてください。
+
+---
+
+# 📂 ドキュメント
+
+このリポジトリでは、アプリケーションのソースコードだけでなく、要件・設計・実装・改善までの開発プロセスも記録しています。<br>
+実装だけでは伝わらない設計意図や判断理由については、`docs/` 配下のドキュメントをご覧ください。
+
+| Document            | 内容                     |
+| ------------------- | ------------------------ |
+| 00_ProjectVision.md | プロジェクトの背景・目的 |
+| 01_Requirements.md  | 要件定義                 |
+| 02_DomainModel.md   | ドメイン設計             |
+| 03_DecisionLog.md   | 設計判断の記録           |
+| 04_Roadmap.md       | 今後の開発計画           |
+| 05_LearningLog.md   | 開発を通じて学んだこと   |
+
+---
+
+# 📋 開発ポリシー
+
+このプロジェクトでは、「動くものを作る」だけでなく、
+保守性・拡張性を考慮した開発を意識しています。
+
+- 実装前に要件・設計を整理する
+- 設計変更時はドキュメントも更新する
+- 1 Issue = 1 Pull Request を基本とする
+- 将来の機能追加を考慮した設計を心掛ける
+
+---
+
+# 📈 開発状況
+
+現在は **v1（血縁関係・病歴管理）** を開発中です。
+
+GitHub Projectsを利用しながら継続的に改善しています。
+
+---
+
+# 📄 License
+
+将来的に検討
