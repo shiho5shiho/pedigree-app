@@ -50,13 +50,13 @@ class Person extends Model
         return $this->belongsTo(Person::class, 'biological_mother_id');
     }
 
-    // 実父として登録されている子一覧
+    // 実父として登録されている人の子一覧
     public function biologicalFatherChildren(): HasMany
     {
         return $this->hasMany(Person::class, 'biological_father_id');
     }
 
-    // 実母として登録されている子一覧
+    // 実母として登録されている人の子一覧
     public function biologicalMotherChildren(): HasMany
     {
         return $this->hasMany(Person::class, 'biological_mother_id');
