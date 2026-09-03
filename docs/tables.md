@@ -50,3 +50,6 @@
 - `person_medical_histories` の `person_id` / `medical_condition_id` は `cascadeOnDelete`。本人や病名が消えたら病歴単体は意味を持たないため連動削除。
 - 兄弟姉妹関係は専用テーブルを持たない。`biological_father_id` / `biological_mother_id` が一致する人物を検索して導出する。
 - `biological_sex`は`gender`ではなく医学的な生物学的性を表す名前にしている。X連鎖遺伝（血友病・色覚異常等）やBRCA関連リスクなど、遺伝学的リスク評価において生物学的性別が直接関わるため。
+- 現行の`biological_father_id`/`biological_mother_id`は父・母それぞれ1人分の枠しか持たないため、
+  実親と養親を両方記録することはできない（既知の制約）。対応する場合はpost-v1で
+  `person_parent_relationships`のような多対多テーブルへの再設計が必要。

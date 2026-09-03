@@ -18,9 +18,9 @@
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         {{-- 家系図 --}}
-        <div
-            class="bg-cream-50 border border-forest-100 rounded-xl p-6 transition duration-200
-                   hover:border-forest-500 hover:shadow-lg">
+        <a href="{{ route('people.index') }}"
+            class="block bg-cream-50 border border-forest-100 rounded-xl p-6 transition duration-200
+                hover:border-forest-500 hover:shadow-lg">
 
             <div class="flex items-center gap-2 mb-3">
                 <span class="text-xl">👨‍👩‍👧</span>
@@ -33,11 +33,7 @@
                 家族の情報を登録・管理します。
             </p>
 
-            <p class="mt-5 text-xs text-amber-700 font-medium">
-                🚧 順次公開予定
-            </p>
-
-        </div>
+        </a>
 
         {{-- 病歴 --}}
         <div
