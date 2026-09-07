@@ -9,6 +9,9 @@
         <a href="{{ route('people.index') }}" class="text-sm text-cream-100/80 hover:text-cream-100">
             家系図メンバー
         </a>
+        <a href="{{ route('medical-conditions.index') }}" class="text-sm text-cream-100/80 hover:text-cream-100">
+            病名マスタ
+        </a>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="text-sm text-cream-100/80 hover:text-cream-100">ログアウト</button>

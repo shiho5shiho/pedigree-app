@@ -55,6 +55,11 @@
                 🚧 順次公開予定
             </p>
 
+            <a href="{{ route('medical-conditions.index') }}"
+                class="mt-3 inline-block text-sm text-forest-700 hover:underline">
+                病名マスタを管理する →
+            </a>
+
         </div>
 
     </section>
