@@ -1,11 +1,8 @@
 #!/bin/bash
 set -e
 
-# キャッシュのクリア&再構築
 php artisan config:clear
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+php artisan cache:clear
 
 # マイグレーション実行(本番も含めて自動反映)
 php artisan migrate --force
