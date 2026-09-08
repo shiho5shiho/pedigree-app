@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PersonMedicalHistory extends Model
 {
@@ -21,13 +20,29 @@ class PersonMedicalHistory extends Model
         'diagnosed_date' => 'date',
     ];
 
-    public function person(): BelongsTo
+    const STATUSES = [
+        'diagnosed' => '診断済み',
+        'suspected' => '疑いあり',
+        'family_reported' => '家族からの伝聞',
+    ];
+
+    public function person()
     {
         return $this->belongsTo(Person::class);
     }
 
-    public function condition(): BelongsTo
+    public function medicalCondition()
     {
-        return $this->belongsTo(MedicalCondition::class, 'medical_condition_id');
+        return $this->belongsTo(MedicalCondition::class);
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function statusLabel(): string
+    {
+        return self::STATUSES[$this->status] ?? $this->status;
     }
 }

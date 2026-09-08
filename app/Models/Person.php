@@ -109,7 +109,7 @@ class Person extends Model
     }
 
     // 病歴一覧
-    public function medicalHistories(): HasMany
+    public function personMedicalHistories(): HasMany
     {
         return $this->hasMany(PersonMedicalHistory::class);
     }
