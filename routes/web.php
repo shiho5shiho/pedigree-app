@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MedicalConditionController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\PersonMedicalHistoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,8 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::resource('people', PersonController::class);
-
     Route::resource('medical-conditions', MedicalConditionController::class);
+    Route::resource('people.medical-histories', PersonMedicalHistoryController::class)
+        ->except(['show'])
+        ->middleware('auth');
 });

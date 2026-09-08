@@ -79,11 +79,17 @@
                     <p class="text-sm whitespace-pre-line">{{ $person->notes }}</p>
                 </div>
                 @endif
+
+
             </div>
 
             <div class="mt-4 flex gap-2">
                 <a href="{{ route('people.edit', $person) }}" class="bg-emerald-700 text-white px-4 py-2 rounded-md hover:bg-emerald-800">
                     編集
+                </a>
+                <a href="{{ route('people.medical-histories.index', $person) }}"
+                    class="bg-forest-100 text-forest-800 px-4 py-2 rounded hover:bg-forest-200 border border-forest-300">
+                    病歴一覧を見る
                 </a>
                 <a href="{{ route('people.index') }}" class="px-4 py-2 rounded-md border border-gray-300">
                     一覧に戻る

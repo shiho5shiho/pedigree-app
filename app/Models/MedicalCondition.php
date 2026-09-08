@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class MedicalCondition extends Model
 {
@@ -12,7 +11,7 @@ class MedicalCondition extends Model
         'category',
     ];
 
-    public function histories(): HasMany
+    public function personMedicalHistories()
     {
         return $this->hasMany(PersonMedicalHistory::class);
     }
